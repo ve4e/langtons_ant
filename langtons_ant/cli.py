@@ -1,10 +1,10 @@
 import os
-from memory_profiler import profile
+#from memory_profiler import profile
 from langtons_ant.ant import Direction, Ant
 from langtons_ant.area import Area, Color
 
 
-@profile
+#@profile
 def main():
     # начальные настройки карты и положения муравья
     AREA_SIZE = (1024, 1024)
