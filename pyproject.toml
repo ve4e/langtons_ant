@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "langtons-ant"
+version = "0.1.0"
+description = ""
+authors = ["Bashveev Yuri <bashveev@krug.local>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pillow = "^10.1.0"
+
+[tool.poetry.group.dev.dependencies]
+memory-profiler = "^0.61.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+ant = "langtons_ant.cli:main"
