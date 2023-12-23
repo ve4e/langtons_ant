@@ -18,14 +18,14 @@ class Direction(Enum):
         setattr(self, '_index', len(self.__class__))
 
     def next(self):
-        """Следующее направление"""
+        """Следующее направление (по часовой)"""
         try:
             return list(self.__class__)[getattr(self, '_index') + 1]
         except IndexError:
             return list(self.__class__)[0]
 
     def prev(self):
-        """Предыдущее направление"""
+        """Предыдущее направление (против часовой)"""
         try:
             return list(self.__class__)[getattr(self, '_index') - 1]
         except IndexError:
@@ -70,7 +70,7 @@ class Ant:
 
     def _turn(self):
         """
-        Повернуть муравья в зависимости от типа текущей клетки
+        Повернуть муравья в зависимости от цвета текущей клетки
         """
         current_color = self._area.color(self._position)
         if current_color == Color.WHITE:
