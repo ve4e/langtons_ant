@@ -5,9 +5,7 @@ from enum import Enum
 
 
 class Color(Enum):
-    """
-    Цвет пикселя
-    """
+    """ Цвет пикселя """
     BLACK = 0
     WHITE = 1
 
@@ -21,23 +19,23 @@ class Area:
 
     @property
     def size(self):
-        """Размер местности"""
+        """ Размер местности """
         return self._size
 
     def color(self, coordinate: Tuple[int, int]) -> Color:
-        """Цвет клетки"""
+        """ Цвет клетки """
         return Color(self._image.getpixel(coordinate))
 
     def set_color(self, coordinate: Tuple[int, int], color: Color):
-        """Установить цвет клетки"""
+        """ Установить цвет клетки """
         self._image.putpixel(coordinate, color.value)
 
     def save(self):
-        """Сохранить картинку"""
+        """ Сохранить картинку """
         self._image.save(self._image_path)
 
     def color_pixel_count(self, color: Color) -> int:
-        """Количество клеток определенного цвета"""
+        """ Количество клеток определенного цвета """
         count = 0
         for coord in itertools.product(range(self._size[0]), range(self._size[1])):
             if self.color(coord) == color:
