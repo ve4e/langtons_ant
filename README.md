@@ -1,6 +1,6 @@
 Запуск программы:
 
-poetry install
+poetry install\n
 poetry run ant
 
 Количество чёрных пикселей: 3683
